@@ -1,11 +1,10 @@
 import React from "react";
-import Vid from '../Assets/ware.mov' 
 import '../StyleSheets/VidStyles.css'
 const Video = () => {
   return (
     <div className="hero">
       <video autoPlay loop muted id="video">
-        <source src={Vid} type="video/mp4" />
+        <source type="video/mp4" />
       </video>
       <div className="content">
       <h1> Pocket Stock</h1>
