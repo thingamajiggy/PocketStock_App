@@ -5,13 +5,28 @@ import { deleteOrder, getOrders, postOrder } from "../util/api"
 
 
 const Orders = () => {
-  const products = [{id: 1, item: 'table', table_leg: 4}, {id: 2, item: 'sofa', swallow: 6}, {id:3, item: 'bed', table_panel: 2}];
+ 
   
   const [quantity, setQuantity] = useState('');
   const [product, setProduct] = useState('')
   const [orders, setOrders] = useState([]);
   const [deleteInfo, setDeleteInfo] = useState(false)
+  const [products, setProducts] = useState([])
+  const [disabled, setDisabled] = useState(true)
+  const [components, setComponents] = useState([])
 
+  useEffect(() => {
+    axios
+    .get("https://finalproject-team3.herokuapp.com/api/product")
+    .then((response) => {
+      setProducts(response.data);
+    });
+  },[])
+
+  useEffect(() => {
+    axios.get("https://finalproject-team3.herokuapp.com/api/components")
+    .then((response) => setComponents(response.data))
+  },[])
  
   useEffect(() => {
     getOrders().then((data) => {
@@ -20,13 +35,18 @@ const Orders = () => {
   }, [])
 
     const handleChange = (e) => {
-          setProduct(e.target.value)
+          setDisabled(false)
+          let obj = JSON.parse(e.target.value);
+          setProduct(obj)
+
+
     }
 
     const handleSubmit = (e) => {
+
           e.preventDefault();
           const orderbody = {
-            product: product,
+            product: product.productName,
             quantity: quantity
           }
           // postOrder(orderbody)
@@ -41,25 +61,47 @@ const Orders = () => {
         return [data.data, ...currOrders]
       })
     })
+    product.components.forEach((component) => {
+      console.log(component)
+     let id = component.componentId
+     let newQty = component.quantity * quantity
+     let item = components.filter((component) => {
+      if(id === component._id){
+        return component.stockLevel
+      }})
+      let stockLevel = item[0].stockLevel - newQty
+      axios.patch(`https://finalproject-team3.herokuapp.com/api/components/${id}`, {
+    stockLevel: stockLevel
+})
+.then((response) => {
+  console.log(response)
+})
+    })
+
+
     setQuantity('')
     }
 
 
   return (
     <>
+    <h1> Orders </h1>
     <section>
       <h3>Add order</h3>
       <form onSubmit={(e) => {handleSubmit(e)}} > 
         <select onChange={handleChange} id="product-add" >
+        <option value="" disabled selected>
+            Select Product
+          </option>
         {products.map((product) => {
-          return <option value={product.item} key={product.item} >
-            {product.item}
+          return <option  value={JSON.stringify(product)} key={product._id} >
+            {product.productName}
           </option>
         })}
         </select>
         <input  required="required" placeholder="Enter quantity" value={quantity} type='text' pattern="[0-9]*"
           onChange={(event) => {setQuantity(event.target.value)}} />
-        <button type="submit" >Confirm</button>
+        <button type="submit" disabled={disabled} >Confirm</button>
       </form>
     </section>
     <div>

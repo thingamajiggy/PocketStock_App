@@ -5,6 +5,7 @@ import ReadOnlyRow from "./ReadOnlyRow";
 import EditableRow from "./EditableRow";
 import axios from "axios";
 import { useRef } from "react";
+import '../StyleSheets/ComponentsList.css'
 
 const ComponentsList = () => {
   const [components, setComponents] = useState([]);
@@ -149,7 +150,7 @@ triggerPoint:editedComponent.triggerPoint})
                       handleDeleteClick={handleDeleteClick}
                     />
                   ) : (
-                    <ReadOnlyRow
+                    <ReadOnlyRow 
                       component={component}
                       handleEditClick={handleEditClick}
                     />

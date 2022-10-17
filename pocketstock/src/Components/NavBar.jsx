@@ -9,10 +9,10 @@ const NavBar = () => {
             <Link to='/'> LogoHere </Link>  
             </div>
             <ul className="navbar-list">
-                <li className="navbar-list-items"> <Link to='/'> Dashboard </Link>  </li>
-                <li className="navbar-list-items"><Link to='/Inventory'> Inventory </Link> </li>
-                <li className="navbar-list-items"> <Link to='/MyProducts'> My Products </Link> </li>
-                <li className="navbar-list-items"> <Link to='/Orders'> Orders </Link> </li>
+                <li className="navbar-list-items"> <Link to='/' key={'1'}> Dashboard </Link>  </li>
+                <li className="navbar-list-items"><Link to='/Inventory' key={'2'}> Inventory </Link> </li>
+                <li className="navbar-list-items"> <Link to='/MyProducts' key={'3'}> My Products </Link> </li>
+                <li className="navbar-list-items"> <Link to='/Orders' key={'4'}> Orders </Link> </li>
             </ul>
 
         </div>
