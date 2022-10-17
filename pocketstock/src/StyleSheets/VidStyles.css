@@ -1,0 +1,45 @@
+
+#video {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+
+}
+
+#video {
+    filter: brightness(60%)
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    object-fit: contain;
+    display: flex;
+
+}
+
+.hero .content {
+    text-align: center;
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    top: 40vh;
+    overflow-x: hidden;
+
+}
+
+.hero .content h1 {
+    font-size: 8rem;
+    color: rgb(255, 255, 255);
+
+}
+
+.hero .content p {
+    width: 500px;
+    color: white;
+    font-size: 2rem;
+    justify-content: center;
+}

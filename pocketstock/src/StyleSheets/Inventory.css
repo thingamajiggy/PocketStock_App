@@ -1,0 +1,15 @@
+.inventoryPage {
+    top: 200px;
+   display: flex;
+   position: relative;
+   flex-direction: column;
+   height: 100%;
+width: 100%;
+   align-items: center;
+   justify-content: center;
+
+}
+
+.components {
+
+}

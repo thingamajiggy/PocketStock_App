@@ -1,9 +1,10 @@
 import React from "react";
 import NavBar from "./NavBar";
+import '../StyleSheets/Header.css'
 
 const Header  = () => {
     return (
-        <div>
+        <div className="Headerposition">
             <NavBar />
 
         </div>

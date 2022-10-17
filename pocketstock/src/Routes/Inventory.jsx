@@ -1,13 +1,14 @@
 import React from "react";
 
 import ComponentsList from "../Components/ComponentsList";
+import '../StyleSheets/Inventory.css'
 
 
 const Inventory = () => {
   return (
-    <div>
+    <div className="inventoryPage">
       <h1>Inventory</h1>
-      <ComponentsList />
+      <ComponentsList className='components'/>
     </div>
   );
 };

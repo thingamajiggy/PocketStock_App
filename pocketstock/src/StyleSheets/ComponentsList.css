@@ -1,4 +1,33 @@
+.components-section {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
 .outofstock {
     background-color: rgb(221, 94, 94);
+}
+
+.components-table {
+    width: 1250px;
+    justify-content: center;
+}
+
+.table {
+    width: 900px;
+    height: 700px;
+    justify-content: center;
+}
+
+.tablecontents {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#thead {
+    border: black solid 1px;
+    background-color: aliceblue;
+    
 }
 

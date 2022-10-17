@@ -1,3 +1,48 @@
+.Header {
+    top: 0;
+    position: fixed;
+    display: flex;
+    height: 150px;
+    width: 100%;
+    background-image:  linear-gradient(rgb(103, 158, 235), rgb(103, 158, 235));
+    justify-content: center;
+}
+
+.navContainer {
+    width: 1245px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+}
+.pocketStockLogo {
+    justify-content: flex-start;
+}
+
+
 .navbar-list {
+    display:inline-flex;
+    width: 800px;
     list-style-type: none;
+    flex-direction:row;
+    justify-content: center;
+}
+
+.navbar-list-items {
+    padding: 60px;
+    font-size: 1.4rem;
+    transition: transform 0.4s;
+}
+.navbar-list-items:hover {
+    transform: scale(105%);
+}
+
+
+
+.logo {
+    height: 75px;
+    transition: transform 0.4s;
+}
+.logo:hover {
+    transform: scale(105%);
 }

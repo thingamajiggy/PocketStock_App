@@ -127,15 +127,16 @@ triggerPoint:editedComponent.triggerPoint})
   };
 
   return (
+    <div className="components-section">
     <div className="components-table">
-      <form onSubmit={handleEditFormSubmit}>
-        <table>
+      <form onSubmit={handleEditFormSubmit} className='tablecontents'>
+        <table className="table">
           <thead>
             <tr>
-              <th>Component</th>
-              <th>Stock Level</th>
-              <th>Trigger Point</th>
-              <th>Manage Component</th>
+              <th id="thead">Component</th>
+              <th id="thead">Stock Level</th>
+              <th id="thead">Trigger Point</th>
+              <th id="thead">Manage Component</th>
             </tr>
           </thead>
           <tbody>
@@ -161,9 +162,9 @@ triggerPoint:editedComponent.triggerPoint})
           </tbody>
         </table>
       </form>
-
-      <h2> Add a New Component</h2>
-      <form onSubmit={handleSubmit} ref={formRef}>
+    
+      <h2 className='tablecontents'> Add a New Component</h2>
+      <form onSubmit={handleSubmit} ref={formRef} className='tablecontents'>
         <input
           type="text"
           name="component"
@@ -187,7 +188,9 @@ triggerPoint:editedComponent.triggerPoint})
         />
         <button type="submit">Add</button>
       </form>
+      </div>
     </div>
+    
   );
 };
 export default ComponentsList;
