@@ -1,15 +1,15 @@
 import React from "react";
 import '../StyleSheets/VidStyles.css'
+import Nut from '../Assets/nutandbolt.png'
 const Video = () => {
   return (
     <div className="hero">
-      <video autoPlay loop muted id="video">
-        <source type="video/mp4" />
-      </video>
       <div className="content">
+        <div id="herotext">
       <h1> Pocket Stock</h1>
-      <p> Your semi-automated solution to dynamic stock management. </p>
-
+      <p> An automated solution to dynamic stock management for <span id="your"> <strong><em>your</em></strong></span> E-commerce business. </p>
+      </div>
+      <img src={Nut} className = 'nut'/>
       </div>
     </div>
   );

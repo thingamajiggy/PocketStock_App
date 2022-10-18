@@ -6,6 +6,8 @@
     width: 100%;
     background-image:  linear-gradient(rgb(103, 158, 235), rgb(103, 158, 235));
     justify-content: center;
+
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
 }
 
 .navContainer {
@@ -17,6 +19,7 @@
 }
 .pocketStockLogo {
     justify-content: flex-start;
+   
 }
 
 
@@ -28,13 +31,17 @@
     justify-content: center;
 }
 
-.navbar-list-items {
-    padding: 60px;
+.navbar-list-items  {
+    height: 30px;
+    margin: 60px;
     font-size: 1.4rem;
-    transition: transform 0.4s;
+    border-bottom: solid 1px transparent ;
+    transition: all ease-out 0.5s;
+   
 }
-.navbar-list-items:hover {
+.navbar-list-items:hover  {
     transform: scale(105%);
+    border-bottom: white 2px solid;
 }
 
 
@@ -45,4 +52,9 @@
 }
 .logo:hover {
     transform: scale(105%);
+}
+
+#user {
+    font-size: 1.7rem;
+    color: white
 }

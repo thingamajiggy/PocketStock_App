@@ -14,16 +14,15 @@ const ProductsList = () => {
 
   useEffect(() => {
     axios
-      .get("https://finalproject-team3.herokuapp.com/api/components")
+      .get("https://super-pocket-stock.herokuapp.com/api/components")
       .then((response) => {
         setComponents(response.data);
-    
       });
   }, []);
 
   useEffect(() => {
     axios
-      .get("https://finalproject-team3.herokuapp.com/api/product")
+      .get("https://super-pocket-stock.herokuapp.com/api/products")
       .then((response) => {
         setProducts(response.data);
         setSubmitting(false);
@@ -39,7 +38,6 @@ const ProductsList = () => {
           componentId: singleComponent._id,
           component: singleComponent.component,
           quantity: quantity,
-
         },
       ];
     });
@@ -50,26 +48,19 @@ const ProductsList = () => {
     if (obj.componentId !== "undefined") {
       setDisabled(false);
     }
-    console.log(obj);
 
     setSingleComponent(obj);
   };
-  // console.log(singleComponent)
-  console.log(newProduct);
-  console.log(addComponents);
   let body = {
     productName: newProduct,
     components: addComponents,
   };
-  console.log(body);
   const handleSubmit = (e) => {
     e.preventDefault();
 
     axios
-      .post("https://finalproject-team3.herokuapp.com/api/product", body)
-      .catch((err) => {
-        console.log(err);
-      });
+      .post("https://super-pocket-stock.herokuapp.com/api/products", body)
+      .catch((err) => {});
     setNewProduct("");
     setAddComponents([]);
     setSubmitting(true);
@@ -80,10 +71,8 @@ const ProductsList = () => {
       <h1> Products </h1>
       <ul>
         {products.map((product) => {
-          return (
-           
-              <ProductCard product={product}/>
-          );
+          console.log(product)
+          return <ProductCard product={product} key={product._id} setProducts={setProducts} />;
         })}
       </ul>
       <h2> Add a Product</h2>
@@ -108,10 +97,8 @@ const ProductsList = () => {
       />
       <br />
       <form onSubmit={handleAddComponent}>
-        <select onChange={handleSelect}>
-          <option value="" disabled selected>
-            Select Component
-          </option>
+        <select onChange={handleSelect} defaultValue="Select Component">
+          <option disabled>Select Component</option>
           {components.map((component) => {
             return (
               <option

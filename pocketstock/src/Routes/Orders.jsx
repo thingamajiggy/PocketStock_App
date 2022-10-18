@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import SingleOrder from "../Components/SingleOrder";
 import { deleteOrder, getOrders, postOrder } from "../util/api"
+import '../StyleSheets/Orders.css'
 
 
 const Orders = () => {
@@ -17,14 +18,14 @@ const Orders = () => {
 
   useEffect(() => {
     axios
-    .get("https://finalproject-team3.herokuapp.com/api/product")
+    .get("https://super-pocket-stock.herokuapp.com/api/products")
     .then((response) => {
       setProducts(response.data);
     });
   },[])
 
   useEffect(() => {
-    axios.get("https://finalproject-team3.herokuapp.com/api/components")
+    axios.get("https://super-pocket-stock.herokuapp.com/api/components")
     .then((response) => setComponents(response.data))
   },[])
  
@@ -32,7 +33,7 @@ const Orders = () => {
     getOrders().then((data) => {
       setOrders(data);
     })
-  }, [])
+  }, [orders.length])
 
     const handleChange = (e) => {
           setDisabled(false)
@@ -55,22 +56,21 @@ const Orders = () => {
           //     return [data.data, ...currOrders]
           //   })
           // })
-    axios.post('https://finalproject-team3.herokuapp.com/api/order',
+    axios.post('https://super-pocket-stock.herokuapp.com/api/orders',
      orderbody).then((data) => {
+      console.log(data)
      setOrders((currOrders) => {
         return [data.data, ...currOrders]
       })
     })
     product.components.forEach((component) => {
-      console.log(component)
      let id = component.componentId
      let newQty = component.quantity * quantity
      let item = components.filter((component) => {
-      if(id === component._id){
-        return component.stockLevel
-      }})
+      return id === component._id
+      })
       let stockLevel = item[0].stockLevel - newQty
-      axios.patch(`https://finalproject-team3.herokuapp.com/api/components/${id}`, {
+      axios.patch(`https://super-pocket-stock.herokuapp.com/api/components/${id}`, {
     stockLevel: stockLevel
 })
 .then((response) => {
@@ -85,12 +85,13 @@ const Orders = () => {
 
   return (
     <>
+    <div className="orders">
     <h1> Orders </h1>
     <section>
       <h3>Add order</h3>
       <form onSubmit={(e) => {handleSubmit(e)}} > 
-        <select onChange={handleChange} id="product-add" >
-        <option value="" disabled selected>
+        <select onChange={handleChange} id="product-add" defaultValue='Select Product' >
+        <option  disabled>
             Select Product
           </option>
         {products.map((product) => {
@@ -120,6 +121,7 @@ const Orders = () => {
         </tbody>
       </table>
       <p>{deleteInfo ? 'Order deleted!' : ''}</p>
+    </div>
     </div>
     </>
   )

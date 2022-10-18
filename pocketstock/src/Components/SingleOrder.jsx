@@ -14,7 +14,7 @@ import { useState } from "react";
        
         setButtonDisable(true);
         setDeleteInfo(true)
-        axios.delete(`https://finalproject-team3.herokuapp.com/api/order/${orderId}`)
+        axios.delete(`https://super-pocket-stock.herokuapp.com/api/orders/${orderId}`)
         .then(() => {})
       }
 

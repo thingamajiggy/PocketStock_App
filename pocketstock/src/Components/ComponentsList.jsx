@@ -23,10 +23,10 @@ const ComponentsList = () => {
   const [submitting, setSubmitting] = useState(false)
 
   let formRef = useRef();
-
+  
   useEffect(() => {
     axios
-      .get("https://finalproject-team3.herokuapp.com/api/components")
+      .get("https://super-pocket-stock.herokuapp.com/api/components")
       .then((response) => {
         setComponents(response.data);
         setSubmitting(false)
@@ -77,15 +77,13 @@ const ComponentsList = () => {
       stockLevel: addComponent.stockLevel,
       triggerPoint: addComponent.triggerPoint,
     };
-    axios.post("https://finalproject-team3.herokuapp.com/api/components", {component: newComponent.component,
+    axios.post("https://super-pocket-stock.herokuapp.com/api/components", {component: newComponent.component,
     stockLevel: newComponent.stockLevel,
     triggerPoint: newComponent.triggerPoint,})
     .then((response) => {
         console.log(response)
     })
 
-    // const newComponents = [...components, newComponent];
-    // setComponents(newComponents);
     formRef.current.reset();
     setSubmitting(true)
   };
@@ -100,7 +98,7 @@ const ComponentsList = () => {
       triggerPoint: editFormData.triggerPoint,
     };
 
-    axios.patch(`https://finalproject-team3.herokuapp.com/api/components/${editComponent_id}`, {
+    axios.patch(`https://super-pocket-stock.herokuapp.com/api/components/${editComponent_id}`, {
         component: editedComponent.component,
     stockLevel: editedComponent.stockLevel,
 triggerPoint:editedComponent.triggerPoint})
@@ -123,7 +121,7 @@ triggerPoint:editedComponent.triggerPoint})
     setComponents((currComponents) =>
       currComponents.filter((component) => component._id !== editComponent_id)
     );
-    axios.delete(`https://finalproject-team3.herokuapp.com/api/components/${editComponent_id}`)
+    axios.delete(`https://super-pocket-stock.herokuapp.com/api/components/${editComponent_id}`)
   };
 
   return (

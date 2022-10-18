@@ -1,14 +1,18 @@
 import React from "react";
 import axios from "axios";
 
-const ProductCard = ({product}) => {
+const ProductCard = ({product, setProducts}) => {
 
     const handleDelete = (e, product) => {
         e.preventDefault();
         console.log(product._id);
+        setProducts((currProducts) => {
+          currProducts.filter((products) => product._id !== products._id)
+        })
         axios.delete(
-          `https://finalproject-team3.herokuapp.com/api/product/${product._id}`
-        );
+          `https://super-pocket-stock.herokuapp.com/api/products/${product._id}`
+        )
+        
       };
 
     return (
@@ -17,7 +21,7 @@ const ProductCard = ({product}) => {
        <ul>
         <p>Components:</p>
         {product.components.map((component) => {
-            return <li>{component.component} <strong>quantity:</strong> {component.quantity}</li>
+            return <li key={component._id}>{component.component} <strong>quantity:</strong> {component.quantity}</li>
         })}
        </ul>
        <button onClick={(e) => handleDelete(e, product)}> Delete</button>
