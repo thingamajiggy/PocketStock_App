@@ -1,31 +1,24 @@
 import axios from "axios";
-import { useState } from "react";
 
- const SingleOrder = ({order, setDeleteInfo}) => {
+ const SingleOrder = ({order, setOrders}) => {
 
-    const [buttonDisable, setButtonDisable] = useState(false);
- 
-
-    const handleDelete = (orderId) => {
-        // const newOrders = [...orders];
-        // const index = orders.findIndex((order) => order.id === orderId);
-        // newOrders.splice(index, 1);
-        // setOrders(newOrders);
-       
-        setButtonDisable(true);
-        setDeleteInfo(true)
-        axios.delete(`https://super-pocket-stock.herokuapp.com/api/orders/${orderId}`)
-        .then(() => {})
+    const handleDelete = (e, orderId) => {
+      e.preventDefault();
+      setOrders((currOrders) => {
+        return currOrders.filter((order) => {
+          return order._id !== orderId
+        })
+      })
+      axios.delete(`https://super-pocket-stock.herokuapp.com/api/orders/${orderId}`)
       }
 
     return (
         <>
-        <tr >
+        <tr>
            <td>{order.product}</td>
            <td>{order.quantity}</td>
-           <td><button type="button" disabled={buttonDisable} onClick={() => {handleDelete(order._id)}} >delete</button></td>
-         </tr>
-        
+           <td><button type="button" onClick={(e) => handleDelete(e, order._id)} >delete</button></td>
+         </tr>     
         </>   
     )
 }

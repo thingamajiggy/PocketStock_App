@@ -1,20 +1,16 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import SingleOrder from "../Components/SingleOrder";
-import { deleteOrder, getOrders, postOrder } from "../util/api"
 import '../StyleSheets/Orders.css'
 
-
 const Orders = () => {
- 
-  
   const [quantity, setQuantity] = useState('');
   const [product, setProduct] = useState('')
   const [orders, setOrders] = useState([]);
-  const [deleteInfo, setDeleteInfo] = useState(false)
   const [products, setProducts] = useState([])
   const [disabled, setDisabled] = useState(true)
-  const [components, setComponents] = useState([])
+  const [components, setComponents] = useState([]);
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     axios
@@ -26,39 +22,33 @@ const Orders = () => {
 
   useEffect(() => {
     axios.get("https://super-pocket-stock.herokuapp.com/api/components")
-    .then((response) => setComponents(response.data))
+    .then((response) => 
+    setComponents(response.data))
   },[])
  
   useEffect(() => {
-    getOrders().then((data) => {
-      setOrders(data);
+    axios
+    .get("https://super-pocket-stock.herokuapp.com/api/orders")
+    .then((response) => {
+      setOrders(response.data);
+      setSubmitting(false);
     })
-  }, [orders.length])
+  }, [submitting])
 
     const handleChange = (e) => {
           setDisabled(false)
           let obj = JSON.parse(e.target.value);
           setProduct(obj)
-
-
     }
 
     const handleSubmit = (e) => {
-
           e.preventDefault();
           const orderbody = {
             product: product.productName,
             quantity: quantity
           }
-          // postOrder(orderbody)
-          // .then((data) => {
-          //   setOrders((currOrders) => {
-          //     return [data.data, ...currOrders]
-          //   })
-          // })
     axios.post('https://super-pocket-stock.herokuapp.com/api/orders',
      orderbody).then((data) => {
-      console.log(data)
      setOrders((currOrders) => {
         return [data.data, ...currOrders]
       })
@@ -72,16 +62,12 @@ const Orders = () => {
       let stockLevel = item[0].stockLevel - newQty
       axios.patch(`https://super-pocket-stock.herokuapp.com/api/components/${id}`, {
     stockLevel: stockLevel
-})
-.then((response) => {
-  console.log(response)
-})
+  })
+  .then((response) => {})
     })
-
-
     setQuantity('')
+    setSubmitting(true);
     }
-
 
   return (
     <>
@@ -116,11 +102,10 @@ const Orders = () => {
         </thead>
         <tbody>
           {orders.map((order) => (
-         <SingleOrder key={order._id} order={order} setDeleteInfo={setDeleteInfo}/>
+         <SingleOrder key={order._id} order={order} setOrders={setOrders}/>
          ))}
         </tbody>
       </table>
-      <p>{deleteInfo ? 'Order deleted!' : ''}</p>
     </div>
     </div>
     </>

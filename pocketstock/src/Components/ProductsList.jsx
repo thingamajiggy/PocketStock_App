@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
+
 const ProductsList = () => {
   const [components, setComponents] = useState([]);
   const [products, setProducts] = useState([]);
@@ -48,7 +49,6 @@ const ProductsList = () => {
     if (obj.componentId !== "undefined") {
       setDisabled(false);
     }
-
     setSingleComponent(obj);
   };
   let body = {
@@ -57,7 +57,6 @@ const ProductsList = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-
     axios
       .post("https://super-pocket-stock.herokuapp.com/api/products", body)
       .catch((err) => {});
@@ -71,7 +70,6 @@ const ProductsList = () => {
       <h1> Products </h1>
       <ul>
         {products.map((product) => {
-          console.log(product)
           return <ProductCard product={product} key={product._id} setProducts={setProducts} />;
         })}
       </ul>
@@ -79,7 +77,7 @@ const ProductsList = () => {
       <ul>
         {addComponents.map((component) => {
           return (
-            <li>
+            <li key={component.component}>
               {" "}
               {component.component} {component.quantity}
             </li>
