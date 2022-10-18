@@ -4,15 +4,13 @@ import axios from "axios";
 const ProductCard = ({product, setProducts}) => {
 
     const handleDelete = (e, product) => {
-        e.preventDefault();
-        console.log(product._id);
+        e.preventDefault(); 
         setProducts((currProducts) => {
-          currProducts.filter((products) => product._id !== products._id)
+          return currProducts.filter((products) => product._id !== products._id)
         })
         axios.delete(
           `https://super-pocket-stock.herokuapp.com/api/products/${product._id}`
-        )
-        
+        )   
       };
 
     return (
