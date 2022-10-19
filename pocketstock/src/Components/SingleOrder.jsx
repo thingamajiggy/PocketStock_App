@@ -17,7 +17,7 @@ import axios from "axios";
         <tr>
            <td>{order.product}</td>
            <td>{order.quantity}</td>
-           <td><button type="button" onClick={(e) => handleDelete(e, order._id)} >delete</button></td>
+           <td><button className="order-button" type="button" onClick={(e) => handleDelete(e, order._id)} >delete</button></td>
          </tr>     
         </>   
     )

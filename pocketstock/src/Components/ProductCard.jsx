@@ -15,13 +15,13 @@ const ProductCard = ({product, setProducts}) => {
       };
 
     return (
-        <div>
-          <tr>
+          <tr className="product 2">
             <td>{product.productName}</td>
-            <td><ul>{product.components.map((component) => {return <li>{component.component} || Quantity: {component.quantity}</li>})}</ul></td>
-            <td><button onClick={(e) => handleDelete(e, product)}> Delete</button></td>
+            <td>
+              <ul>{product.components.map((component) => {return <li>{component.component} || Quantity: {component.quantity}</li>})}</ul></td>
+            <td>
+              <button className="button-design" onClick={(e) => handleDelete(e, product)}> Delete</button></td> 
           </tr>
-       </div>
     )
 }
 
