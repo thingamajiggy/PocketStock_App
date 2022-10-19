@@ -4,12 +4,12 @@ import Key from "../Components/Tablekey";
 import '../StyleSheets/Inventory.css'
 
 
-const Inventory = () => {
+const Inventory = ({setPatching}) => {
 
   return (
     <div className="inventoryPage">
       <Key />
-      <ComponentsList className='components' />
+      <ComponentsList className='components' setPatching={setPatching}/>
     </div>
   );
 };

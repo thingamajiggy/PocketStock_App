@@ -1,11 +1,11 @@
 import axios from "axios";
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext} from "react";
 import ProductCard from "./ProductCard";
 import '../StyleSheets/Products.css'
+import { ComponentsContext } from "../Contexts/components"; 
 
 const ProductsList = () => {
-  const [components, setComponents] = useState([]);
   const [products, setProducts] = useState([]);
   const [addComponents, setAddComponents] = useState([]);
   const [singleComponent, setSingleComponent] = useState("");
@@ -13,14 +13,9 @@ const ProductsList = () => {
   const [newProduct, setNewProduct] = useState("");
   const [disabled, setDisabled] = useState(true);
   const [submitting, setSubmitting] = useState(false);
+  const {components} = useContext(ComponentsContext);
 
-  useEffect(() => {
-    axios
-      .get("https://super-pocket-stock.herokuapp.com/api/components")
-      .then((response) => {
-        setComponents(response.data);
-      });
-  }, []);
+
 
   useEffect(() => {
     axios

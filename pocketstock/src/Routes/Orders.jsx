@@ -1,16 +1,15 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import SingleOrder from "../Components/SingleOrder";
 import '../StyleSheets/Orders.css'
+import { ComponentsContext } from "../Contexts/components";
 
-const Orders = () => {
+const Orders = ({orders, setOrders, setSubmitting}) => {
   const [quantity, setQuantity] = useState('');
   const [product, setProduct] = useState('')
-  const [orders, setOrders] = useState([]);
   const [products, setProducts] = useState([])
   const [disabled, setDisabled] = useState(true)
-  const [components, setComponents] = useState([]);
-  const [submitting, setSubmitting] = useState(false);
+  const {components} = useContext(ComponentsContext);
 
   useEffect(() => {
     axios
@@ -19,22 +18,7 @@ const Orders = () => {
       setProducts(response.data);
     });
   },[])
-
-  useEffect(() => {
-    axios.get("https://super-pocket-stock.herokuapp.com/api/components")
-    .then((response) => 
-    setComponents(response.data))
-  },[])
  
-  useEffect(() => {
-    axios
-    .get("https://super-pocket-stock.herokuapp.com/api/orders")
-    .then((response) => {
-      setOrders(response.data);
-      setSubmitting(false);
-    })
-  }, [submitting])
-
     const handleChange = (e) => {
           setDisabled(false)
           let obj = JSON.parse(e.target.value);

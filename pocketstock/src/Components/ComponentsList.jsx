@@ -7,7 +7,7 @@ import axios from "axios";
 import { useRef } from "react";
 import "../StyleSheets/ComponentsList.css";
 
-const ComponentsList = () => {
+const ComponentsList = ({setPatching}) => {
   const [components, setComponents] = useState([]);
   const [addComponent, setAddComponent] = useState({
     component: "",
@@ -109,7 +109,9 @@ const ComponentsList = () => {
         stockLevel: editedComponent.stockLevel,
         triggerPoint: editedComponent.triggerPoint,
       }
-    );
+    ).then(() => {
+      setPatching(true)
+    })
 
     const newComponents = [...components];
     const index = components.findIndex(

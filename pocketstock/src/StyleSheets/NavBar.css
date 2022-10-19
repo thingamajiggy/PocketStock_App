@@ -1,61 +1,56 @@
 .Header {
-    top: 0;
-    position: fixed;
-    display: flex;
-    height: 150px;
-    width: 100%;
-    background-image:  linear-gradient(rgb(103, 158, 235), rgb(103, 158, 235));
-    justify-content: center;
-    z-index: 1;
+  top: 0;
+  position: fixed;
+  display: flex;
+  height: 150px;
+  width: 100%;
+  background-image: linear-gradient(rgb(103, 158, 235), rgb(103, 158, 235));
+  justify-content: center;
+  z-index: 1;
 
-    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navContainer {
-    width: 1245px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    
+  width: 1245px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 .pocketStockLogo {
-    justify-content: flex-start;
-   
+  justify-content: flex-start;
 }
-
 
 .navbar-list {
-    display:inline-flex;
-    width: 800px;
-    list-style-type: none;
-    flex-direction:row;
-    justify-content: center;
+  display: inline-flex;
+  width: 900px;
+  list-style-type: none;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.navbar-list-items  {
-    height: 30px;
-    margin: 60px;
-    font-size: 1.4rem;
-    border-bottom: solid 1px transparent ;
-    transition: all ease-out 0.5s;
-   
+.navbar-list-items {
+  height: 30px;
+  margin: 60px;
+  font-size: 1.4rem;
+  border-bottom: solid 1px transparent;
+  transition: all ease-out 0.5s;
+  align-items: center;
 }
-.navbar-list-items:hover  {
-    transform: scale(105%);
-    border-bottom: white 2px solid;
+.navbar-list-items:hover {
+  transform: scale(105%);
+  border-bottom: white 2px solid;
 }
-
-
 
 .logo {
-    height: 75px;
-    transition: transform 0.4s;
+  height: 75px;
+  transition: transform 0.4s;
 }
 .logo:hover {
-    transform: scale(105%);
+  transform: scale(105%);
 }
 
 #user {
-    font-size: 1.7rem;
-    color: white
+  font-size: 1.7rem;
+  color: white;
 }
