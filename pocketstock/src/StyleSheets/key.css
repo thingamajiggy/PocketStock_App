@@ -16,12 +16,12 @@
 #red {
   height: 1rem;
   width: 1rem;
-    color: rgb(221, 94, 94);
+  color: rgb(221, 94, 94);
 }
 #yellow {
   height: 1rem;
   width: 1rem;
- color: rgb(228, 220, 108);
+  color: rgb(228, 220, 108);
 }
 
 .info:hover .infocontent {
@@ -36,5 +36,5 @@
   font-weight: lighter;
 }
 #infoicon {
-    padding-right: 10px;
+  padding-right: 10px;
 }

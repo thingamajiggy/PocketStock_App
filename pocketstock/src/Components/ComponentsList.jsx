@@ -7,7 +7,7 @@ import axios from "axios";
 import { useRef } from "react";
 import "../StyleSheets/ComponentsList.css";
 
-const ComponentsList = ({setPatching}) => {
+const ComponentsList = ({ setPatching }) => {
   const [components, setComponents] = useState([]);
   const [addComponent, setAddComponent] = useState({
     component: "",
@@ -21,7 +21,6 @@ const ComponentsList = ({setPatching}) => {
   });
   const [editComponent_id, setEditComponent_id] = useState(null);
   const [submitting, setSubmitting] = useState(false);
-
 
   let formRef = useRef();
 
@@ -78,15 +77,11 @@ const ComponentsList = ({setPatching}) => {
       stockLevel: addComponent.stockLevel,
       triggerPoint: addComponent.triggerPoint,
     };
-    axios
-      .post("https://super-pocket-stock.herokuapp.com/api/components", {
-        component: newComponent.component,
-        stockLevel: newComponent.stockLevel,
-        triggerPoint: newComponent.triggerPoint,
-      })
-      .then((response) => {
-        console.log(response);
-      });
+    axios.post("https://super-pocket-stock.herokuapp.com/api/components", {
+      component: newComponent.component,
+      stockLevel: newComponent.stockLevel,
+      triggerPoint: newComponent.triggerPoint,
+    });
 
     formRef.current.reset();
     setSubmitting(true);
@@ -102,16 +97,18 @@ const ComponentsList = ({setPatching}) => {
       triggerPoint: editFormData.triggerPoint,
     };
 
-    axios.patch(
-      `https://super-pocket-stock.herokuapp.com/api/components/${editComponent_id}`,
-      {
-        component: editedComponent.component,
-        stockLevel: editedComponent.stockLevel,
-        triggerPoint: editedComponent.triggerPoint,
-      }
-    ).then(() => {
-      setPatching(true)
-    })
+    axios
+      .patch(
+        `https://super-pocket-stock.herokuapp.com/api/components/${editComponent_id}`,
+        {
+          component: editedComponent.component,
+          stockLevel: editedComponent.stockLevel,
+          triggerPoint: editedComponent.triggerPoint,
+        }
+      )
+      .then(() => {
+        setPatching(true);
+      });
 
     const newComponents = [...components];
     const index = components.findIndex(
@@ -173,52 +170,52 @@ const ComponentsList = ({setPatching}) => {
           </table>
         </form>
         <div className="addnewcomponent">
-        <form onSubmit={handleSubmit} ref={formRef} className="tablecontents">
-          <table className="table">
-            <thead>
-              <tr>
-                <th colSpan={4}>Add New Component</th>     
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  {" "}
-                  <input
-                    type="text"
-                    name="component"
-                    required="required"
-                    placeholder="Enter component name"
-                    onChange={handleAddFormChange}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name="stockLevel"
-                    required="required"
-                    placeholder="Enter stock level"
-                    onChange={handleAddFormChange}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name="triggerPoint"
-                    required="required"
-                    placeholder="Enter trigger point"
-                    onChange={handleAddFormChange}
-                  />
-                </td>
-                <td>
-                  <button className="editcomponent" type="submit">
-                    Add
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </form>
+          <form onSubmit={handleSubmit} ref={formRef} className="tablecontents">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th colSpan={4}>Add New Component</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    {" "}
+                    <input
+                      type="text"
+                      name="component"
+                      required="required"
+                      placeholder="Enter component name"
+                      onChange={handleAddFormChange}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name="stockLevel"
+                      required="required"
+                      placeholder="Enter stock level"
+                      onChange={handleAddFormChange}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name="triggerPoint"
+                      required="required"
+                      placeholder="Enter trigger point"
+                      onChange={handleAddFormChange}
+                    />
+                  </td>
+                  <td>
+                    <button className="editcomponent" type="submit">
+                      Add
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
         </div>
       </div>
     </div>

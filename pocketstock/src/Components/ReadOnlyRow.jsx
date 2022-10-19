@@ -1,24 +1,32 @@
 import React from "react";
 
 const ReadOnlyRow = ({ component, handleEditClick }) => {
-let classname = ''
-  if(component.stockLevel < component.triggerPoint && component.stockLevel > 0) {
-    classname = 'outofstock'
+  let classname = "";
+  if (
+    component.stockLevel < component.triggerPoint &&
+    component.stockLevel > 0
+  ) {
+    classname = "outofstock";
   } else if (component.stockLevel < 0) {
-    classname = 'ordernow'
+    classname = "ordernow";
   }
 
-    return (
+  return (
+    <tr className={classname}>
+      <td>{component.component}</td>
+      <td>{component.stockLevel}</td>
+      <td>{component.triggerPoint}</td>
+      <td>
+        <button
+          className="editcomponent"
+          type="button"
+          onClick={(event) => handleEditClick(event, component)}
+        >
+          Edit
+        </button>
+      </td>
+    </tr>
+  );
+};
 
-              <tr className={classname}>
-                <td>{component.component}</td>
-                <td>{component.stockLevel}</td>
-                <td>{component.triggerPoint}</td>
-                <td>
-                    <button className="editcomponent" type='button' onClick={(event) => handleEditClick(event, component)}>Edit</button>
-                </td>
-              </tr>
-    )
-}
-
-export default ReadOnlyRow
+export default ReadOnlyRow;

@@ -1,141 +1,141 @@
 .products-list-form {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .line-1 {
-    height: 1px;
-    background: black;
-    margin-bottom: 20px;
-    margin-top: 2px
-  }
+  height: 1px;
+  background: black;
+  margin-bottom: 20px;
+  margin-top: 2px;
+}
 
-  .test4 {
-    margin-bottom: 10px;
+.test4 {
+  margin-bottom: 10px;
 }
 
 .product-1 {
-    top: 200px;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+  top: 200px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-2 {
-    width: 200px;
-    border: 1px solid black;
-    padding: 20px;
-    margin: 20px;
-    font-size: 16px;
+  width: 200px;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px;
+  font-size: 16px;
 }
 
 .products-styled-table {
-    width: 100%;
-    justify-content: center;
-    margin: 30px 0;
-    font-size: 0.9em;
-    border-spacing: 0;
-    border-collapse: collapse;
-    min-width: 400px;
-    border-radius: 16px 16px 0 0;
-    overflow: hidden;
-    box-shadow: 5px 5px 10px rgb(215, 215, 215);
+  width: 100%;
+  justify-content: center;
+  margin: 30px 0;
+  font-size: 0.9em;
+  border-spacing: 0;
+  border-collapse: collapse;
+  min-width: 400px;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px rgb(215, 215, 215);
 }
 
 .products-styled-table thead tr {
-    background-color: rgb(147, 147, 147);
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1rem;
-    border-radius: 12px 12px 0 0;
+  background-color: rgb(147, 147, 147);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 12px 12px 0 0;
 }
 
-.products-styled-table th, .products-styled-table td {
-    padding: 20px 15px;
-
+.products-styled-table th,
+.products-styled-table td {
+  padding: 20px 15px;
 }
 
 .products-styled-table tbody tr {
-    border-bottom: 1px solid lightgray;
-    font-size: 1rem;
-    transition: background-color 0.5s;
+  border-bottom: 1px solid lightgray;
+  font-size: 1rem;
+  transition: background-color 0.5s;
 }
 
 .products-styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid rgb(83, 102, 130);
+  border-bottom: 2px solid rgb(83, 102, 130);
 }
 .products-styled-table tbody tr:hover {
- background-color: rgb(207, 207, 207);
+  background-color: rgb(207, 207, 207);
 }
 
 .tablecontents {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .test {
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .test > button {
-    min-width: 8rem;
-    border-radius: 7px;
-    border: transparent;
-    background-color: rgb(83, 102, 130) ;
-    color: white;
+  min-width: 8rem;
+  border-radius: 7px;
+  border: transparent;
+  background-color: rgb(83, 102, 130);
+  color: white;
 }
 
 .test > input[type="number"] {
-    flex: 1 0 auto;
-    margin-right: 7px;
+  flex: 1 0 auto;
+  margin-right: 7px;
 }
 
 .product-add {
-    align-items: center;
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
 }
 
 .product-add > input {
-    flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 .product-add > button {
-    border-radius: 7px;
-    border: transparent;
-    background-color: rgb(83, 102, 130) ;
-    color: white;
-    min-width: 8rem;
+  border-radius: 7px;
+  border: transparent;
+  background-color: rgb(83, 102, 130);
+  color: white;
+  min-width: 8rem;
 }
 
 .product-add > button:disabled {
-    opacity: 0.2;
-    cursor: not-allowed;
+  opacity: 0.2;
+  cursor: not-allowed;
 }
 
 .button-design {
-    border-radius: 7px;
-    border: transparent;
-    background-color: rgb(83, 102, 130) ;
-    color: white;
-    font-size: 1rem;
-    transition: transform 0.2s
+  border-radius: 7px;
+  border: transparent;
+  background-color: rgb(83, 102, 130);
+  color: white;
+  font-size: 1rem;
+  transition: transform 0.2s;
 }
 
 .whole-page {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .button-design:hover {
-    transform: scale(103%)
+  transform: scale(103%);
 }

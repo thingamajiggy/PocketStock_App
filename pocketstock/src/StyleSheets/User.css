@@ -1,82 +1,78 @@
 .staff-div {
-   text-align: center;
+  text-align: center;
 }
 
 .staff-list {
-   display: inline-flex; 
-   text-align: center;
-   list-style-position: inside;
-
+  display: inline-flex;
+  text-align: center;
+  list-style-position: inside;
 }
 
 .staff {
-   padding: 50px;
-   display: inline;
+  padding: 50px;
+  display: inline;
 }
 
 .loggedIn-staff {
-   margin-top: 200px;
-   margin-bottom: 60px;
-   display: block;
-   align-items: center;
-    justify-content: center;
-    text-align: center;
-    /* display: flex; */
+  margin-top: 200px;
+  margin-bottom: 60px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .rainbow {
-   text-decoration: none;
-   background-color: rgb(148, 188, 249);
-   color: rgb(183, 112, 194);
-   padding: 4px 10px;
-   border-radius: 6px;
+  text-decoration: none;
+  background-color: rgb(148, 188, 249);
+  color: rgb(183, 112, 194);
+  padding: 4px 10px;
+  border-radius: 6px;
 }
 
 .rainbow:hover {
-   background-image: linear-gradient(to
-   right,
-   #ff0000,
-   #ff0000 15%,
-   #ff7f00 15.5%,
-   #ff7f00 30%,
-   #ffff00 33%,
-   #ffff00 50%,
-   #00ff00 51%,
-   #00ff00 70%,
-   #0000ff 71%,
-   #0000ff 85%,
-   #4b0082 85%,
-   #4b0082 100%,
-   #9400d3 100%
-   );
+  background-image: linear-gradient(
+    to right,
+    #ff0000,
+    #ff0000 15%,
+    #ff7f00 15.5%,
+    #ff7f00 30%,
+    #ffff00 33%,
+    #ffff00 50%,
+    #00ff00 51%,
+    #00ff00 70%,
+    #0000ff 71%,
+    #0000ff 85%,
+    #4b0082 85%,
+    #4b0082 100%,
+    #9400d3 100%
+  );
 
-   animation: rainbowAnimation 5s linear
-   infinite;
+  animation: rainbowAnimation 5s linear infinite;
 }
 
 @keyframes rainbowAnimation {
-   to {
-      background-position: 20vw;
-   }
+  to {
+    background-position: 20vw;
+  }
 }
 
 .userimg:hover {
-   transform: scale(1.3);
-
+  transform: scale(1.3);
 }
 
 .wrapper {
-   padding: 1px;
-   width: 300px;
-   margin: auto;
-   border: 3px  rgb(148, 188, 249);
-   overflow: hidden;
-   border-style: dashed;
-   border-radius: 10px;
+  padding: 1px;
+  width: 300px;
+  margin: auto;
+  border: 3px rgb(148, 188, 249);
+  overflow: hidden;
+  border-style: dashed;
+  border-radius: 10px;
 }
 
 .target {
-   margin: 3px;
+  margin: 3px;
   font-weight: bold;
   color: rgb(183, 112, 194);
   animation-name: rightToLeft;
@@ -86,10 +82,10 @@
 }
 
 @keyframes rightToLeft {
-   0% {
-      transform: translateX(200px);
-   }
-   100% {
-      transform: translateX(-160px);
-   }
+  0% {
+    transform: translateX(200px);
+  }
+  100% {
+    transform: translateX(-160px);
+  }
 }

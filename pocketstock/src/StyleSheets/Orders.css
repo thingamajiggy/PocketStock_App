@@ -1,155 +1,155 @@
 .orders {
-    top: 150px;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+  top: 150px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .line-1 {
-    height: 1px;
-    background: black;
-    margin-bottom: 20px;
-    margin-top: 2px
-  }
+  height: 1px;
+  background: black;
+  margin-bottom: 20px;
+  margin-top: 2px;
+}
 
 .styled-table {
-    justify-content: center;
-    margin: 30px 0;
-    font-size: 0.9em;
-    border-spacing: 0;
-    border-collapse: collapse;
-    min-width: 400px;
-    border-radius: 16px 16px 0 0;
-    overflow: hidden;
-    box-shadow: 5px 5px 10px rgb(215, 215, 215);
+  justify-content: center;
+  margin: 30px 0;
+  font-size: 0.9em;
+  border-spacing: 0;
+  border-collapse: collapse;
+  min-width: 400px;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px rgb(215, 215, 215);
 }
 
 .styled-table thead tr {
-    background-color: rgb(147, 147, 147);
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1rem;
-    border-radius: 12px 12px 0 0;
-}
-
-.styled-table th, .styled-table td {
-    padding: 20px 15px;
-
-}
-
-.styled-table tbody tr {
-    border-bottom: 1px solid lightgray;
-    font-size: 1rem;
-    transition: background-color 0.5s;
-}
-
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid rgb(83, 102, 130);
-}
-.styled-table tbody tr:hover {
- background-color: rgb(207, 207, 207);
-}
-
-.styled-table td:first-of-type {
-    width:25%;
-  }
-
-.test {
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.test > button {
-    min-width: 8rem;
-    border-radius: 7px;
-    border: transparent;
-    background-color: rgb(83, 102, 130) ;
-    color: white;
-}
-
-.test2 {
-    margin-top: 25px;
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-}
-
-.test4 {
-    margin-bottom: 10px;
-}
-
-.test3 {
-    width: 500px;
-}
-
-  select {
-    padding: 10px 20px;
-    border-radius: 4px;
-    margin-right: 7px;
-  }
-
-  input[type=text] {
-    /* flex: 1 0 auto; */
-    transition: width 0.4s ease-in-out;
-    padding: 10px 20px;
-    border-radius: 4px;
-    margin-right: 7px;
-  }
-  
-  button {
-    padding: 10px 20px;
-  }
-
-  .styled-table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    width: 100%;
-}
-
-.styled-table th {
-    color: white;
+  background-color: rgb(147, 147, 147);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 12px 12px 0 0;
 }
 
 .styled-table th,
 .styled-table td {
-    padding: 12px 15px;
+  padding: 20px 15px;
 }
 
 .styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid lightgray;
+  font-size: 1rem;
+  transition: background-color 0.5s;
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid rgb(51, 64, 71);
+  border-bottom: 2px solid rgb(83, 102, 130);
+}
+.styled-table tbody tr:hover {
+  background-color: rgb(207, 207, 207);
+}
+
+.styled-table td:first-of-type {
+  width: 25%;
+}
+
+.test {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.test > button {
+  min-width: 8rem;
+  border-radius: 7px;
+  border: transparent;
+  background-color: rgb(83, 102, 130);
+  color: white;
+}
+
+.test2 {
+  margin-top: 25px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.test4 {
+  margin-bottom: 10px;
+}
+
+.test3 {
+  width: 500px;
+}
+
+select {
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-right: 7px;
+}
+
+input[type="text"] {
+  /* flex: 1 0 auto; */
+  transition: width 0.4s ease-in-out;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-right: 7px;
+}
+
+button {
+  padding: 10px 20px;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  width: 100%;
+}
+
+.styled-table th {
+  color: white;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid rgb(51, 64, 71);
 }
 
 .styled-table tbody tr.active-row {
-    font-weight: bold;
-    color: rgb(103, 158, 235);
+  font-weight: bold;
+  color: rgb(103, 158, 235);
 }
 
 .test6 {
-        border: 1px solid rgb(51, 64, 71);
-        margin: 0 10px 0 10px;
-        padding: 20px 30px 20px 30px;
-        border-radius: 30px;
+  border: 1px solid rgb(51, 64, 71);
+  margin: 0 10px 0 10px;
+  padding: 20px 30px 20px 30px;
+  border-radius: 30px;
 }
 
 td {
-    text-align: center;
-  }
+  text-align: center;
+}
 
-  .order-button {
-    border-radius: 7px;
-    border: transparent;
-    background-color: rgb(83, 102, 130) ;
-    color: white;
-    font-size: 1rem;
-    transition: transform 0.2s
-  }
+.order-button {
+  border-radius: 7px;
+  border: transparent;
+  background-color: rgb(83, 102, 130);
+  color: white;
+  font-size: 1rem;
+  transition: transform 0.2s;
+}
