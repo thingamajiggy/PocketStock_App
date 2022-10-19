@@ -16,14 +16,11 @@ const ProductCard = ({product, setProducts}) => {
 
     return (
         <div>
-       {product.productName}
-       <ul>
-        <p>Components:</p>
-        {product.components.map((component) => {
-            return <li key={component._id}>{component.component} <strong>quantity:</strong> {component.quantity}</li>
-        })}
-       </ul>
-       <button onClick={(e) => handleDelete(e, product)}> Delete</button>
+          <tr>
+            <td>{product.productName}</td>
+            <td><ul>{product.components.map((component) => {return <li>{component.component} || Quantity: {component.quantity}</li>})}</ul></td>
+            <td><button onClick={(e) => handleDelete(e, product)}> Delete</button></td>
+          </tr>
        </div>
     )
 }

@@ -4,6 +4,7 @@ import DashBoard from "./Routes/Dashboard";
 import Inventory from "./Routes/Inventory";
 import MyProducts from "./Routes/MyProducts";
 import Orders from "./Routes/Orders";
+import User from "./Routes/User"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/Inventory" element={<Inventory />} />
         <Route path="/Myproducts" element={<MyProducts />} />
         <Route path="/Orders" element={<Orders />} />
+        <Route path="/change-user" element={<User />} />
       </Routes>
     </div>
   );

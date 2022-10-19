@@ -15,7 +15,7 @@ const NavBar = () => {
                 <li className="navbar-list-items"><Link to='/Inventory' key={'2'}> Inventory </Link> </li>
                 <li className="navbar-list-items"> <Link to='/MyProducts' key={'3'}> My Products </Link> </li>
                 <li className="navbar-list-items"> <Link to='/Orders' key={'4'}> Orders </Link> </li>
-                <li className="navbar-list-items" id="user"> <FaRegUser /> </li>
+                <li className="navbar-list-items" id="user"> <Link to='/change-user'><FaRegUser /></Link> </li>
             </ul>
             </div>
 

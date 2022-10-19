@@ -5,7 +5,7 @@ import ReadOnlyRow from "./ReadOnlyRow";
 import EditableRow from "./EditableRow";
 import axios from "axios";
 import { useRef } from "react";
-import '../StyleSheets/ComponentsList.css'
+import "../StyleSheets/ComponentsList.css";
 
 const ComponentsList = () => {
   const [components, setComponents] = useState([]);
@@ -20,16 +20,17 @@ const ComponentsList = () => {
     triggerPoint: "",
   });
   const [editComponent_id, setEditComponent_id] = useState(null);
-  const [submitting, setSubmitting] = useState(false)
+  const [submitting, setSubmitting] = useState(false);
+
 
   let formRef = useRef();
-  
+
   useEffect(() => {
     axios
       .get("https://super-pocket-stock.herokuapp.com/api/components")
       .then((response) => {
         setComponents(response.data);
-        setSubmitting(false)
+        setSubmitting(false);
       });
   }, [submitting]);
 
@@ -77,15 +78,18 @@ const ComponentsList = () => {
       stockLevel: addComponent.stockLevel,
       triggerPoint: addComponent.triggerPoint,
     };
-    axios.post("https://super-pocket-stock.herokuapp.com/api/components", {component: newComponent.component,
-    stockLevel: newComponent.stockLevel,
-    triggerPoint: newComponent.triggerPoint,})
-    .then((response) => {
-        console.log(response)
-    })
+    axios
+      .post("https://super-pocket-stock.herokuapp.com/api/components", {
+        component: newComponent.component,
+        stockLevel: newComponent.stockLevel,
+        triggerPoint: newComponent.triggerPoint,
+      })
+      .then((response) => {
+        console.log(response);
+      });
 
     formRef.current.reset();
-    setSubmitting(true)
+    setSubmitting(true);
   };
 
   const handleEditFormSubmit = (event) => {
@@ -98,10 +102,14 @@ const ComponentsList = () => {
       triggerPoint: editFormData.triggerPoint,
     };
 
-    axios.patch(`https://super-pocket-stock.herokuapp.com/api/components/${editComponent_id}`, {
+    axios.patch(
+      `https://super-pocket-stock.herokuapp.com/api/components/${editComponent_id}`,
+      {
         component: editedComponent.component,
-    stockLevel: editedComponent.stockLevel,
-triggerPoint:editedComponent.triggerPoint})
+        stockLevel: editedComponent.stockLevel,
+        triggerPoint: editedComponent.triggerPoint,
+      }
+    );
 
     const newComponents = [...components];
     const index = components.findIndex(
@@ -121,74 +129,99 @@ triggerPoint:editedComponent.triggerPoint})
     setComponents((currComponents) =>
       currComponents.filter((component) => component._id !== editComponent_id)
     );
-    axios.delete(`https://super-pocket-stock.herokuapp.com/api/components/${editComponent_id}`)
+    axios.delete(
+      `https://super-pocket-stock.herokuapp.com/api/components/${editComponent_id}`
+    );
   };
 
   return (
     <div className="components-section">
-    <div className="components-table">
-      <form onSubmit={handleEditFormSubmit} className='tablecontents'>
-        <table className="table">
-          <thead>
-            <tr>
-              <th id="thead">Component</th>
-              <th id="thead">Stock Level</th>
-              <th id="thead">Trigger Point</th>
-              <th id="thead">Manage Component</th>
-            </tr>
-          </thead>
-          <tbody>
-            {components.map((component) => {
-              return (
-                <Fragment>
-                  {editComponent_id === component._id ? (
-                    <EditableRow
-                      editFormData={editFormData}
-                      handleEditFormChange={handleEditFormChange}
-                      handleCancelClick={handleCancelClick}
-                      handleDeleteClick={handleDeleteClick}
-                    />
-                  ) : (
-                    <ReadOnlyRow 
-                      component={component}
-                      handleEditClick={handleEditClick}
-                    />
-                  )}
-                </Fragment>
-              );
-            })}
-          </tbody>
-        </table>
-      </form>
-    
-      <h2 className='tablecontents'> Add a New Component</h2>
-      <form onSubmit={handleSubmit} ref={formRef} className='tablecontents'>
-        <input
-          type="text"
-          name="component"
-          required="required"
-          placeholder="Enter component name"
-          onChange={handleAddFormChange}
-        />
-        <input
-          type="number"
-          name="stockLevel"
-          required="required"
-          placeholder="Enter stock level"
-          onChange={handleAddFormChange}
-        />
-        <input
-          type="number"
-          name="triggerPoint"
-          required="required"
-          placeholder="Enter trigger point"
-          onChange={handleAddFormChange}
-        />
-        <button type="submit">Add</button>
-      </form>
+      <div className="components-table">
+        <form onSubmit={handleEditFormSubmit} className="tablecontents">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Stock Level</th>
+                <th>Trigger Point</th>
+                <th>Manage Component</th>
+              </tr>
+            </thead>
+            <tbody>
+              {components.map((component) => {
+                return (
+                  <Fragment>
+                    {editComponent_id === component._id ? (
+                      <EditableRow
+                        editFormData={editFormData}
+                        handleEditFormChange={handleEditFormChange}
+                        handleCancelClick={handleCancelClick}
+                        handleDeleteClick={handleDeleteClick}
+                      />
+                    ) : (
+                      <ReadOnlyRow
+                        component={component}
+                        handleEditClick={handleEditClick}
+                      />
+                    )}
+                  </Fragment>
+                );
+              })}
+            </tbody>
+          </table>
+        </form>
+        <div className="addnewcomponent">
+        <form onSubmit={handleSubmit} ref={formRef} className="tablecontents">
+          <table className="table">
+            <thead>
+              <tr>
+                <th colSpan={4}>Add New Component</th>
+         
+              
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  {" "}
+                  <input
+                    type="text"
+                    name="component"
+                    required="required"
+                    placeholder="Enter component name"
+                    onChange={handleAddFormChange}
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    name="stockLevel"
+                    required="required"
+                    placeholder="Enter stock level"
+                    onChange={handleAddFormChange}
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    name="triggerPoint"
+                    required="required"
+                    placeholder="Enter trigger point"
+                    onChange={handleAddFormChange}
+                  />
+                </td>
+                <td>
+                  <button className="editcomponent" type="submit">
+                    Add
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+        </div>
       </div>
     </div>
-    
   );
 };
 export default ComponentsList;

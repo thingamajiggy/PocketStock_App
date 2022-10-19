@@ -68,12 +68,20 @@ const ProductsList = () => {
 
   return (
     <div>
-      <h1> Products </h1>
-      <ul>
+      <table>
+        <thread>
+          <tr>
+            <th>Product</th>
+            <th>Components</th>
+            <th>Action</th>
+          </tr>
+        </thread>
+        <tbody>
         {products.map((product) => {
           return <ProductCard product={product} key={product._id} setProducts={setProducts} />;
         })}
-      </ul>
+        </tbody>
+      </table>
       <h2> Add a Product</h2>
       <ul>
         {addComponents.map((component) => {
