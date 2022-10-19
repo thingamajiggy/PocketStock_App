@@ -6,6 +6,7 @@
     width: 100%;
     background-image:  linear-gradient(rgb(103, 158, 235), rgb(103, 158, 235));
     justify-content: center;
+    z-index: 1;
 
     box-shadow: 0 5px 10px rgba(0,0,0,.1);
 }

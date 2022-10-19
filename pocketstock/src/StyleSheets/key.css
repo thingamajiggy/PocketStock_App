@@ -1,0 +1,40 @@
+.info {
+  position: relative;
+  display: inline-block;
+}
+.infocontent {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 400px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  font-size: 1.2rem;
+}
+
+#red {
+  height: 1rem;
+  width: 1rem;
+    color: rgb(221, 94, 94);
+}
+#yellow {
+  height: 1rem;
+  width: 1rem;
+ color: rgb(228, 220, 108);
+}
+
+.info:hover .infocontent {
+  display: block;
+}
+#useful {
+  display: flex;
+  justify-content: left;
+  width: 1250px;
+  align-items: center;
+  padding-left: 60px;
+  font-weight: lighter;
+}
+#infoicon {
+    padding-right: 10px;
+}

@@ -34,9 +34,9 @@ const EditableRow = ({editFormData, handleEditFormChange, handleCancelClick, han
         />
       </td>
       <td>
-        <button type="submit">Save</button>
-        <button type="button" onClick={handleCancelClick}>Cancel</button>
-        <button type="button" onClick={handleDeleteClick}>Delete</button>
+        <button  type="submit">Save</button>
+        <button  type="button" onClick={handleCancelClick}>Cancel</button>
+        <button  type="button" onClick={handleDeleteClick}>Delete</button>
         
       </td>
     </tr>
