@@ -67,9 +67,9 @@ const ProductsList = () => {
   return (
     <div className="product-1">
       <h1> Products </h1>
-      <section>
+      <section >
     <h3 className="test4">Products Description</h3>
-    <div class="line-1"></div>
+    <div className="line-1"></div>
       <table className="products-styled-table">
         <thead>
           <tr>
@@ -85,7 +85,7 @@ const ProductsList = () => {
         </tbody>
       </table>
       <h3 className="test4">Add Components and Products</h3>
-      <div class="line-1"></div>
+      <div className="line-1"></div>
       <ul>
         {addComponents.map((component) => {
           return (

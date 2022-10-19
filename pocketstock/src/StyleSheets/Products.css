@@ -101,7 +101,7 @@
 .product-add {
     align-items: center;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin-bottom: 20px;
 }
 
@@ -134,4 +134,8 @@
 .whole-page {
     display: flex;
     flex-direction: column;
+}
+
+.button-design:hover {
+    transform: scale(103%)
 }
