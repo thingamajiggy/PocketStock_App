@@ -17,7 +17,7 @@ const User = () => {
             <p><strong>{loggedUser.userName}</strong></p>
             <p><strong>{loggedUser.role}</strong></p>
         </div>
-        <div>
+        <div className="staff-div">
         <ul className="staff-list">
             {users.map((user) => {
                 return <li key={user.id} className="staff">
