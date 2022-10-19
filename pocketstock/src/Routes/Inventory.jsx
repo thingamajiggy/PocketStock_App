@@ -1,5 +1,4 @@
 import React from "react";
-
 import ComponentsList from "../Components/ComponentsList";
 import '../StyleSheets/Inventory.css'
 
