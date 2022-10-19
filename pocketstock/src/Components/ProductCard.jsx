@@ -20,7 +20,7 @@ const ProductCard = ({ product, setProducts }) => {
         <ul>
           {product.components.map((component) => {
             return (
-              <li>
+              <li className="productlistitem">
                 {component.component} || Quantity: {component.quantity}
               </li>
             );

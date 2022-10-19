@@ -64,9 +64,8 @@ const ProductsList = () => {
 
   return (
     <div className="product-1">
-      <h1> Products </h1>
-      <section>
-        <h3 className="test4">Products Description</h3>
+      <section className="tables">
+        <h2 className="test4">Product Description</h2>
         <div className="line-1"></div>
         <table className="products-styled-table">
           <thead>

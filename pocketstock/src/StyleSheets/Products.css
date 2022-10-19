@@ -12,6 +12,7 @@
 
 .test4 {
   margin-bottom: 10px;
+  font-weight: lighter;
 }
 
 .product-1 {
@@ -58,6 +59,8 @@
 .products-styled-table th,
 .products-styled-table td {
   padding: 20px 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .products-styled-table tbody tr {
@@ -138,4 +141,23 @@
 
 .button-design:hover {
   transform: scale(103%);
+}
+
+.tables {
+  width: 1250px;
+  justify-content: center;
+  font-size: 0.9em;
+  border-spacing: 0;
+  border-collapse: collapse;
+  min-width: 400px;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+ 
+}
+
+.productlistitem {
+  list-style-type: none;
+  padding-right: 45px;
+  font-size: 1.2rem;
+  font-weight: lighter;
 }
