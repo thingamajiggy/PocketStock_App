@@ -73,9 +73,11 @@ const Orders = () => {
     <>
     <div className="orders">
     <h1> Orders </h1>
-    <section>
-      <h3>Add order</h3>
-      <form onSubmit={(e) => {handleSubmit(e)}} > 
+    <div className="test6">
+    <section className="test2">
+      <h3 className="test4">Add Order</h3>
+      <div class="line-1"></div>
+      <form className="test" onSubmit={(e) => {handleSubmit(e)}} > 
         <select onChange={handleChange} id="product-add" defaultValue='Select Product' >
         <option  disabled>
             Select Product
@@ -91,8 +93,10 @@ const Orders = () => {
         <button type="submit" disabled={disabled} >Confirm</button>
       </form>
     </section>
-    <div>
-      <table>
+    <div className="test3">
+    <h3 className="test4"> Order Description </h3>
+    <div class="line-1"></div>
+      <table className="styled-table">
         <thead>
           <tr>
             <th>Product</th>
@@ -106,6 +110,7 @@ const Orders = () => {
          ))}
         </tbody>
       </table>
+    </div>
     </div>
     </div>
     </>

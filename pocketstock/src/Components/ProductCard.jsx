@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import '../StyleSheets/Products.css'
 
 const ProductCard = ({product, setProducts}) => {
 

@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
+import '../StyleSheets/Products.css'
 
 const ProductsList = () => {
   const [components, setComponents] = useState([]);
@@ -92,7 +93,8 @@ const ProductsList = () => {
           );
         })}
       </ul>
-
+      
+      <div className="products-list-form">
       <input
         type="text"
         onChange={(e) => {
@@ -101,7 +103,6 @@ const ProductsList = () => {
         required="required"
         placeholder="Enter Product name"
       />
-      <br />
       <form onSubmit={handleAddComponent}>
         <select onChange={handleSelect} defaultValue="Select Component">
           <option disabled>Select Component</option>
@@ -129,8 +130,9 @@ const ProductsList = () => {
         <button type="submit" disabled={disabled}>
           Add Component
         </button>
-        <br />
       </form>
+      </div>
+      
       <button type="submit" onClick={handleSubmit}>
         Add Product
       </button>
