@@ -175,9 +175,7 @@ const ComponentsList = () => {
           <table className="table">
             <thead>
               <tr>
-                <th colSpan={4}>Add New Component</th>
-         
-              
+                <th colSpan={4}>Add New Component</th>     
               </tr>
             </thead>
             <tbody>

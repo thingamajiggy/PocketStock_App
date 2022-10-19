@@ -52,12 +52,15 @@ const ProductsList = () => {
     }
     setSingleComponent(obj);
   };
+
   let body = {
     productName: newProduct,
     components: addComponents,
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
     axios
       .post("https://super-pocket-stock.herokuapp.com/api/products", body)
       .catch((err) => {});
@@ -67,22 +70,27 @@ const ProductsList = () => {
   };
 
   return (
-    <div>
-      <table>
-        <thread>
+    <div className="product-1">
+      <h1> Products </h1>
+      <section>
+    <h3 className="test4">Products Description</h3>
+    <div class="line-1"></div>
+      <table className="products-styled-table">
+        <thead>
           <tr>
             <th>Product</th>
             <th>Components</th>
             <th>Action</th>
           </tr>
-        </thread>
+        </thead>
         <tbody>
         {products.map((product) => {
           return <ProductCard product={product} key={product._id} setProducts={setProducts} />;
         })}
         </tbody>
       </table>
-      <h2> Add a Product</h2>
+      <h3 className="test4">Add Components and Products</h3>
+      <div class="line-1"></div>
       <ul>
         {addComponents.map((component) => {
           return (
@@ -93,17 +101,8 @@ const ProductsList = () => {
           );
         })}
       </ul>
-      
-      <div className="products-list-form">
-      <input
-        type="text"
-        onChange={(e) => {
-          setNewProduct(e.target.value);
-        }}
-        required="required"
-        placeholder="Enter Product name"
-      />
-      <form onSubmit={handleAddComponent}>
+
+      <form className="test" onSubmit={handleAddComponent}>
         <select onChange={handleSelect} defaultValue="Select Component">
           <option disabled>Select Component</option>
           {components.map((component) => {
@@ -130,12 +129,21 @@ const ProductsList = () => {
         <button type="submit" disabled={disabled}>
           Add Component
         </button>
-      </form>
-      </div>
-      
-      <button type="submit" onClick={handleSubmit}>
+      </form>    
+      <div className="product-add">
+      <input
+        type="text"
+        onChange={(e) => {
+          setNewProduct(e.target.value);
+        }}
+        required="required"
+        placeholder="Enter Product name"
+      />
+      <button disabled={!singleComponent || !quantity} type="submit" onClick={handleSubmit}>
         Add Product
       </button>
+      </div>
+      </section>
     </div>
   );
 };
