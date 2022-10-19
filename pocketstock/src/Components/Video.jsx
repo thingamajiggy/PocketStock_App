@@ -8,13 +8,7 @@ const Video = () => {
         <div id="herotext">
           <h1> Pocket Stock</h1>
           <p>
-            An automated solution to dynamic stock management for
-            <span id="your">
-              <strong>
-                <em>your</em>
-              </strong>
-            </span>
-            E-commerce business.
+            An automated solution to dynamic stock management for <span id="your"><strong><em>your</em></strong></span> E-commerce business.
           </p>
         </div>
         <img src={Nut} className="nut" />
