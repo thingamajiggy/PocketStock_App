@@ -1,10 +1,9 @@
 import React from "react";
-import { useEffect, useState, useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../StyleSheets/NavBar.css";
 import Logo from "../Assets/pocketstocklogo.png";
 import { FaRegUser } from "react-icons/fa";
-import axios from "axios";
 import { BsFillSquareFill } from "react-icons/bs";
 import { ComponentsContext } from "../Contexts/components";
 const NavBar = () => {
@@ -70,7 +69,7 @@ const NavBar = () => {
         <div className="pocketStockLogo">
           <Link to="/">
             {" "}
-            <img src={Logo} className="logo" />{" "}
+            <img src={Logo} className="logo" alt="Pocket Stock Logo"/>{" "}
           </Link>
         </div>
         <div className="navListContainer">

@@ -1,8 +1,9 @@
 import React from "react";
 import "../StyleSheets/threesteps.css";
-import Cog from "../Assets/component.png";
-import Order from "../Assets/order.png";
-import Product from "../Assets/product.png";
+import Boxes from "../Assets/cardboardbox.png"
+import Lego from "../Assets/lego.png"
+import Computer from "../Assets/computer.png"
+
 
 const Threesteps = () => {
   return (
@@ -10,9 +11,9 @@ const Threesteps = () => {
       <div className="threestepscontent">
         <section className="section1container">
           <section className="section1">
-            <img src={Cog} className="icon1" alt="cog icon" />
+            <img src={Lego} className="icon1" alt="cog icon" />
             <section className="section1text">
-              <h3>Step 1: Add Your Components</h3>
+              <h3>First, add Your Components.</h3>
               <p>
                 <em>
                   Complete your stock take, enter your stock level and enter
@@ -25,26 +26,25 @@ const Threesteps = () => {
         <section className="section2container">
           <section className="section2">
             <section className="section2text">
-              <h3>Step 2: Add Your Products </h3>
+              <h3>Then, add Your Products. </h3>
               <p>
                 <em>Enter your products and assign your components.</em>
               </p>
             </section>
-            <img src={Product} className="icon2" alt="robot arm icon" />
+            <img src={Boxes} className="icon2" alt="robot arm icon" />
           </section>
         </section>
         <section className="section3container">
           <section className="section3">
-            <img src={Order} className="icon3" alt="computer icon" />
+            <img src={Computer} className="icon3" alt="computer icon" />
             <section className="section3text">
-              <h3>Step 3: Connect Your Shops</h3>
+              <h3> Lastly, connect Your Stores.</h3>
               <p>
                 {" "}
                 <em>
-                  Link your E-commerce businesses and let Pocket Stock track
-                  your inventory based on products sold.{" "}
+                  Stock management made simple.{" "}
                 </em>
-                <strong> The ultimate pull system. </strong>
+                
               </p>
             </section>
           </section>

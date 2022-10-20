@@ -1,27 +1,25 @@
 .components-section {
   display: flex;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   justify-content: center;
-  max-height: 100vh;
 }
 
 .components-table {
-  width: 1250px;
+  width: 1000px;
   justify-content: center;
 }
 
 .table {
-  width: 1250px;
+  width: 1000px;
   justify-content: center;
-  margin: 30px 0;
   font-size: 0.9em;
   border-spacing: 0;
   border-collapse: collapse;
   min-width: 400px;
   border-radius: 16px 16px 0 0;
-  overflow: hidden;
   box-shadow: 5px 5px 10px rgb(215, 215, 215);
+  height: 512px;
 }
 
 .table thead tr {
@@ -29,8 +27,9 @@
   color: white;
   text-align: center;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border-radius: 12px 12px 0 0;
+  
 }
 
 .table th,
@@ -40,7 +39,7 @@
 
 .table tbody tr {
   border-bottom: 1px solid lightgray;
-  font-size: 1.2rem;
+  font-size: 1rem;
   transition: background-color 0.5s;
 }
 
@@ -55,6 +54,16 @@
   display: flex;
   justify-content: center;
   text-align: center;
+  height: 512px;
+  overflow-y: scroll;
+  box-shadow: 5px 5px 10px rgb(215, 215, 215);
+  border-radius: 12px 12px 0 0;
+
+}
+.table thead {
+  position: sticky;
+  top: 0;
+ 
 }
 
 .ordernow {
@@ -71,7 +80,7 @@
   border: transparent;
   background-color: rgb(83, 102, 130);
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
   transition: transform 0.2s;
 }
 
@@ -79,17 +88,47 @@
   transform: scale(105%);
 }
 
-.addnewcomponent {
-  width: 1250px;
+#addnewcomponent {
+  width: 1000px;
   align-items: center;
   border-radius: 10px;
+  height: 10px;
+  position: fixed;
+  bottom: 0;
+  
 }
 
-#loading {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  z-index: 2;
-  background-color: black;
-  color: white;
+.table1 {
+  bottom: 10px;
+  width: 1000px;
+  justify-content: center;
+  margin-top: 100px;
+  font-size: 0.9em;
+  border-spacing: 0;
+  border-collapse: collapse;
+  min-width: 400px;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px rgb(215, 215, 215);
 }
+
+.table1 thead tr {
+  background-color: rgb(147, 147, 147);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 12px 12px 0 0;
+}
+
+.table1 th,
+.table1 td {
+  padding: 20px 15px;
+}
+
+.table1 tbody tr {
+  border-bottom: 1px solid lightgray;
+  font-size: 1rem;
+  transition: background-color 0.5s;
+}
+

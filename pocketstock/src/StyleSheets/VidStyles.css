@@ -8,7 +8,7 @@
 
 .content {
   display: inline-flex;
-  width: 1250px;
+  width: 1000px;
   justify-content: center;
   align-items: center;
 }
@@ -16,25 +16,25 @@
 #herotext {
   width: 900px;
   border-right: solid rgb(255, 255, 255) 5px;
-  padding-left: 10px;
+  padding-left: 55px;
 }
 #herotext h1 {
   justify-content: flex-start;
-  font-size: 7rem;
+  font-size: 5rem;
   color: rgb(255, 255, 255);
   margin-bottom: 0px;
 }
 
 #herotext p {
-  width: 400px;
+  width: 500px;
   color: white;
-  font-size: 2rem;
+  font-size: 1.7rem;
   text-align: left;
 }
 
 .nut {
   display: flex;
-  height: 400px;
+  height: 350px;
   border-left: 10px white;
 }
 

@@ -7,28 +7,28 @@
 }
 
 .mobile {
-  width: 1250px;
+  width: 800px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
 }
 
 #phone {
-  height: 800px;
+  height: 550px;
 }
 
 #mobiledescription {
   width: 500px;
-  font-size: 4rem;
+  font-size: 3rem;
   padding-right: 40px;
   color: rgb(0, 0, 0);
 }
 
 #download {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
 }
 #downloadbutton {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   padding: 5px 20px;
   border-style: none;
   border-radius: 5px;

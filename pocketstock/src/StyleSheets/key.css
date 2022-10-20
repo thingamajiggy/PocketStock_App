@@ -3,38 +3,44 @@
   display: inline-block;
 }
 .infocontent {
+  left: -400px;
   display: none;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 400px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 12px 16px;
+  padding: 9px 18px;
   z-index: 1;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+ 
 }
 
 #red {
-  height: 1rem;
-  width: 1rem;
+  height: .7rem;
   color: rgb(221, 94, 94);
 }
 #yellow {
-  height: 1rem;
-  width: 1rem;
+  height: .7rem;
   color: rgb(228, 220, 108);
 }
 
-.info:hover .infocontent {
-  display: block;
-}
 #useful {
+  position: relative;
+  left: -400px;
   display: flex;
+
   justify-content: left;
-  width: 1250px;
   align-items: center;
   padding-left: 60px;
   font-weight: lighter;
+  font-size: 1.3rem; 
 }
+.info:hover .infocontent {
+  display: block;
+}
+
 #infoicon {
   padding-right: 10px;
 }
+

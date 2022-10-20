@@ -170,8 +170,8 @@ const ComponentsList = ({ setPatching }) => {
           </table>
         </form>
         <div className="addnewcomponent">
-          <form onSubmit={handleSubmit} ref={formRef} className="tablecontents">
-            <table className="table">
+          <form onSubmit={handleSubmit} ref={formRef} className="addnewcomponent">
+            <table className="table1">
               <thead>
                 <tr>
                   <th colSpan={4}>Add New Component</th>

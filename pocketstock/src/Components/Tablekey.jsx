@@ -6,7 +6,6 @@ const Key = () => {
   return (
     <div className="info">
       <h2 id="useful">
-        {" "}
         <BsInfoSquare id="infoicon" />
         Useful Information:
       </h2>
