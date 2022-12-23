@@ -77,7 +77,7 @@ const ComponentsList = ({ setPatching }) => {
       stockLevel: addComponent.stockLevel,
       triggerPoint: addComponent.triggerPoint,
     };
-    axios.post("https://super-pocket-stock.herokuapp.com/api/components", {
+    axios.post("https://pocketstock-app.herokuapp.com/api/components", {
       component: newComponent.component,
       stockLevel: newComponent.stockLevel,
       triggerPoint: newComponent.triggerPoint,
@@ -99,7 +99,7 @@ const ComponentsList = ({ setPatching }) => {
 
     axios
       .patch(
-        `https://super-pocket-stock.herokuapp.com/api/components/${editComponent_id}`,
+        `https://pocketstock-app.herokuapp.com/api/components/${editComponent_id}`,
         {
           component: editedComponent.component,
           stockLevel: editedComponent.stockLevel,
@@ -129,7 +129,7 @@ const ComponentsList = ({ setPatching }) => {
       currComponents.filter((component) => component._id !== editComponent_id)
     );
     axios.delete(
-      `https://super-pocket-stock.herokuapp.com/api/components/${editComponent_id}`
+      `https://pocketstock-app.herokuapp.com/api/components/${editComponent_id}`
     );
   };
 

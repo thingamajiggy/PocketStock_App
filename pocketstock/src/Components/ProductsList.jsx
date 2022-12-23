@@ -55,7 +55,7 @@ const ProductsList = () => {
     e.preventDefault();
 
     axios
-      .post("https://super-pocket-stock.herokuapp.com/api/products", body)
+      .post("https://pocketstock-app.herokuapp.com/api/products", body)
       .catch((err) => {});
     setNewProduct("");
     setAddComponents([]);

@@ -13,7 +13,7 @@ const Orders = ({ orders, setOrders, setSubmitting }) => {
 
   useEffect(() => {
     axios
-      .get("https://super-pocket-stock.herokuapp.com/api/products")
+      .get("https://pocketstock-app.herokuapp.com/api/products")
       .then((response) => {
         setProducts(response.data);
       });
@@ -32,7 +32,7 @@ const Orders = ({ orders, setOrders, setSubmitting }) => {
       quantity: quantity,
     };
     axios
-      .post("https://super-pocket-stock.herokuapp.com/api/orders", orderbody)
+      .post("https://pocketstock-app.herokuapp.com/api/orders", orderbody)
       .then((data) => {
         setOrders((currOrders) => {
           return [data.data, ...currOrders];
@@ -46,12 +46,9 @@ const Orders = ({ orders, setOrders, setSubmitting }) => {
       });
       let stockLevel = item[0].stockLevel - newQty;
       axios
-        .patch(
-          `https://super-pocket-stock.herokuapp.com/api/components/${id}`,
-          {
-            stockLevel: stockLevel,
-          }
-        )
+        .patch(`https://pocketstock-app.herokuapp.com/api/components/${id}`, {
+          stockLevel: stockLevel,
+        })
         .then((response) => {});
     });
     setQuantity("");
