@@ -26,7 +26,7 @@ const ComponentsList = ({ setPatching }) => {
 
   useEffect(() => {
     axios
-      .get("https://super-pocket-stock.herokuapp.com/api/components")
+      .get("https://pocketstock-app.herokuapp.com/api/components")
       .then((response) => {
         setComponents(response.data);
         setSubmitting(false);
@@ -170,7 +170,11 @@ const ComponentsList = ({ setPatching }) => {
           </table>
         </form>
         <div className="addnewcomponent">
-          <form onSubmit={handleSubmit} ref={formRef} className="addnewcomponent">
+          <form
+            onSubmit={handleSubmit}
+            ref={formRef}
+            className="addnewcomponent"
+          >
             <table className="table1">
               <thead>
                 <tr>

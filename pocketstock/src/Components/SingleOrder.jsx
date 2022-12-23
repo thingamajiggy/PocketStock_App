@@ -8,9 +8,7 @@ const SingleOrder = ({ order, setOrders }) => {
         return order._id !== orderId;
       });
     });
-    axios.delete(
-      `https://super-pocket-stock.herokuapp.com/api/orders/${orderId}`
-    );
+    axios.delete(`https://pocketstock-app.herokuapp.com/api/orders/${orderId}`);
   };
 
   return (

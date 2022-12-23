@@ -9,7 +9,7 @@ const ProductCard = ({ product, setProducts }) => {
       return currProducts.filter((products) => product._id !== products._id);
     });
     axios.delete(
-      `https://super-pocket-stock.herokuapp.com/api/products/${product._id}`
+      `https://pocketstock-app.herokuapp.com/api/products/${product._id}`
     );
   };
 

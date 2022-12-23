@@ -17,7 +17,7 @@ const ProductsList = () => {
 
   useEffect(() => {
     axios
-      .get("https://super-pocket-stock.herokuapp.com/api/products")
+      .get("https://pocketstock-app.herokuapp.com/api/products")
       .then((response) => {
         setProducts(response.data);
         setSubmitting(false);
