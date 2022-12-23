@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://super-pocket-stock.herokuapp.com/api/components")
+      .get("https://pocketstock-app.herokuapp.com/api/components")
       .then((response) => {
         setComponents(response.data);
         setPatching(false);
@@ -25,7 +25,7 @@ function App() {
   }, [orders, patching]);
   useEffect(() => {
     axios
-      .get("https://super-pocket-stock.herokuapp.com/api/orders")
+      .get("https://pocketstock-app.herokuapp.com/api/orders")
       .then((response) => {
         setOrders(response.data);
         setSubmitting(false);
