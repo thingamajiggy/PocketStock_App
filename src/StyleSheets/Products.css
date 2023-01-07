@@ -68,13 +68,16 @@
   width: 100%;
 }
 
+.products-list-components:empty {
+  margin: 0;
+}
+
 @media (min-width: 800px) {
   .product-1 {
     margin-top: 50px;
   }
 
   .products-styled-table {
-    margin-top: 15px;
     width: 60%;
   }
 

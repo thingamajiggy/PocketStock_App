@@ -8,6 +8,13 @@ a {
 body {
   font-family: 'Roboto', 'sans-serif';
 }
+
+@media (min-width: 800px) {
+  :root {
+    font-size: 20px;
+  }
+}
+
 /* * {
   background-color: rgb(103, 158, 235)
 } */

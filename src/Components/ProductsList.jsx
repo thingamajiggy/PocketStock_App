@@ -91,7 +91,7 @@ const ProductsList = () => {
         </div>
 
         <h3 className="test4">Add Components and Products</h3>
-        <ul>
+        <ul className="products-list-components">
           {addComponents.map((component) => {
             return (
               <li className="removebullet" key={component.component}>
