@@ -10,6 +10,7 @@ const EditableRow = ({
     <tr>
       <td>
         <input
+          className="inputeditdesign"
           type="text"
           name="component"
           required="required"
@@ -20,6 +21,7 @@ const EditableRow = ({
       </td>
       <td>
         <input
+          className="inputeditdesign"
           type="number"
           name="stockLevel"
           required="required"
@@ -30,6 +32,7 @@ const EditableRow = ({
       </td>
       <td>
         <input
+          className="inputeditdesign"
           type="number"
           name="triggerPoint"
           required="required"

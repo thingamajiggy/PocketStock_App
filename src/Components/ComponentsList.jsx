@@ -169,57 +169,40 @@ const ComponentsList = ({ setPatching }) => {
             </tbody>
           </table>
         </form>
+
         <div className="addnewcomponent">
-          <form
-            onSubmit={handleSubmit}
-            ref={formRef}
-            className="addnewcomponent"
-          >
-            <table className="table1">
-              <thead>
-                <tr>
-                  <th colSpan={4}>Add New Component</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    {" "}
-                    <input
-                      type="text"
-                      name="component"
-                      required="required"
-                      placeholder="Enter component name"
-                      onChange={handleAddFormChange}
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="number"
-                      name="stockLevel"
-                      required="required"
-                      placeholder="Enter stock level"
-                      onChange={handleAddFormChange}
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="number"
-                      name="triggerPoint"
-                      required="required"
-                      placeholder="Enter trigger point"
-                      onChange={handleAddFormChange}
-                    />
-                  </td>
-                  <td>
-                    <button className="editcomponent" type="submit">
-                      Add
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </form>
+          <h3 className="componenttitle">Add New Component</h3>
+          <div className="formcomponent">
+            <form className="formdesign" onSubmit={handleSubmit} ref={formRef}>
+              <input
+                className="inputdesign"
+                type="text"
+                name="component"
+                required="required"
+                placeholder="Enter component name"
+                onChange={handleAddFormChange}
+              />
+              <input
+                className="inputdesign"
+                type="number"
+                name="stockLevel"
+                required="required"
+                placeholder="Enter stock level"
+                onChange={handleAddFormChange}
+              />
+              <input
+                className="inputdesign"
+                type="number"
+                name="triggerPoint"
+                required="required"
+                placeholder="Enter trigger point"
+                onChange={handleAddFormChange}
+              />
+              <button className="addbutton" type="submit">
+                Add
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

@@ -65,34 +65,36 @@ const ProductsList = () => {
   return (
     <div className="product-1">
       <section className="tables">
-        <h2 className="test4">Product Description</h2>
+        <h3 className="test4">Product Description</h3>
         <div className="line-1"></div>
-        <table className="products-styled-table">
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th>Components</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((product) => {
-              return (
-                <ProductCard
-                  product={product}
-                  key={product._id}
-                  setProducts={setProducts}
-                />
-              );
-            })}
-          </tbody>
-        </table>
+        <div className="products-styled-table-container">
+          <table className="products-styled-table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Components</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {products.map((product) => {
+                return (
+                  <ProductCard
+                    product={product}
+                    key={product._id}
+                    setProducts={setProducts}
+                  />
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+
         <h3 className="test4">Add Components and Products</h3>
-        <div className="line-1"></div>
         <ul>
           {addComponents.map((component) => {
             return (
-              <li key={component.component}>
+              <li className="removebullet" key={component.component}>
                 {" "}
                 {component.component} {component.quantity}
               </li>
@@ -101,22 +103,29 @@ const ProductsList = () => {
         </ul>
 
         <form className="test" onSubmit={handleAddComponent}>
-          <select onChange={handleSelect} defaultValue="Select Component">
-            <option disabled>Select Component</option>
-            {components.map((component) => {
-              return (
-                <option
-                  value={JSON.stringify(component)}
-                  key={component._id}
-                  onChange={handleSelect}
-                  required="required"
-                >
-                  {component.component}
-                </option>
-              );
-            })}
-          </select>
+          <div className="selectdesign">
+            <select
+              className="selectwidth"
+              onChange={handleSelect}
+              defaultValue="Select Component"
+            >
+              <option disabled>Select Component</option>
+              {components.map((component) => {
+                return (
+                  <option
+                    value={JSON.stringify(component)}
+                    key={component._id}
+                    onChange={handleSelect}
+                    required="required"
+                  >
+                    {component.component}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
           <input
+            className="inputdesign1"
             type="number"
             required="required"
             placeholder="Quantity"
@@ -124,12 +133,17 @@ const ProductsList = () => {
               setQuantity(e.target.value);
             }}
           />
-          <button type="submit" disabled={disabled}>
+          <button
+            className="addcomponentbutton"
+            type="submit"
+            disabled={disabled}
+          >
             Add Component
           </button>
         </form>
         <div className="product-add">
           <input
+            className="product-adder"
             type="text"
             onChange={(e) => {
               setNewProduct(e.target.value);
@@ -138,6 +152,7 @@ const ProductsList = () => {
             placeholder="Enter Product name"
           />
           <button
+            className="buttondesign"
             disabled={!singleComponent || !quantity}
             type="submit"
             onClick={handleSubmit}

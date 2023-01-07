@@ -1,4 +1,140 @@
-.components-section {
+.components-table {
+  justify-content: center;
+  width: 100%;
+}
+
+.tablecontents {
+  overflow-x: scroll;
+  text-align: center;
+}
+
+.table {
+  width: 50%;
+  justify-content: center;
+  border-collapse: collapse;
+}
+
+.table thead tr {
+  background-color: rgb(147, 147, 147);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 12px 12px 0 0;
+}
+
+.table th,
+.table td {
+  padding: 15px 10px;
+  border: 1px solid black;
+}
+
+
+.table tbody tr {
+  border-bottom: 1px solid lightgray;
+  font-size: 1rem;
+  transition: background-color 0.5s;
+}
+
+.table tbody tr:last-of-type {
+  border-bottom: 2px solid rgb(83, 102, 130);
+}
+.table tbody tr:hover {
+  background-color: rgb(207, 207, 207);
+}
+
+.table td:first-of-type {
+  width: 25%;
+}
+
+.addnewcomponent {
+  margin-top: 30px;
+}
+
+.componenttitle {
+  margin-left: 7px;
+  margin-bottom: 10px;
+}
+
+.editcomponent {
+  transition: transform 0.2s;
+}
+
+.editcomponent:hover {
+  transform: scale(105%);
+}
+
+.formdesign {
+  align-items: center;
+}
+
+.formcomponent {
+  display: flex;
+}
+
+.addbutton {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.formcomponent {
+  justify-content: center;
+  text-align: center;
+}
+
+.inputdesign {
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.inputdesign1 {
+  margin-bottom:10px;
+  padding-right: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.addcomponentbutton {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.selectdesign {
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.inputeditdesign {
+  max-width: 6rem;
+}
+
+@media (min-width: 800px) {
+.tablecontents {
+  display: flex;
+  justify-content: center;
+}
+
+.componenttitle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.addnewcomponent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formcomponent {
+  width: 50%;
+}
+}
+
+/* .components-section {
   display: flex;
   height: 100%;
   width: 100%;
@@ -17,7 +153,6 @@
   border-spacing: 0;
   border-collapse: collapse;
   min-width: 400px;
-  border-radius: 16px 16px 0 0;
   box-shadow: 5px 5px 10px rgb(215, 215, 215);
   height: 512px;
 }
@@ -50,16 +185,7 @@
   background-color: rgb(207, 207, 207);
 }
 
-.tablecontents {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  height: 512px;
-  overflow-y: scroll;
-  box-shadow: 5px 5px 10px rgb(215, 215, 215);
-  border-radius: 12px 12px 0 0;
 
-}
 .table thead {
   position: sticky;
   top: 0;
@@ -131,4 +257,4 @@
   font-size: 1rem;
   transition: background-color 0.5s;
 }
-
+ */

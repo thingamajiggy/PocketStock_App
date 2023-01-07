@@ -1,4 +1,15 @@
 .inventoryPage {
+  padding: 1rem;
+}
+
+@media (min-width: 800px) {
+  .inventoryPage {
+    margin-top: 50px;
+}
+}
+
+
+/* .inventoryPage {
   top: 150px;
   display: flex;
   position: relative;
@@ -7,4 +18,4 @@
   width: 100%;
   align-items: center;
   justify-content: center;
-}
+} */

@@ -58,7 +58,6 @@ const Orders = ({ orders, setOrders, setSubmitting }) => {
   return (
     <>
       <div className="orders">
-        <h1> Orders </h1>
         <div className="test6">
           <section className="test2">
             <h3 className="test4">Add Order</h3>
@@ -71,7 +70,7 @@ const Orders = ({ orders, setOrders, setSubmitting }) => {
             >
               <select
                 onChange={handleChange}
-                id="product-add"
+                className="product-add"
                 defaultValue="Select Product"
               >
                 <option disabled>Select Product</option>
@@ -83,19 +82,26 @@ const Orders = ({ orders, setOrders, setSubmitting }) => {
                   );
                 })}
               </select>
-              <input
-                required="required"
-                placeholder="Enter quantity"
-                value={quantity}
-                type="text"
-                pattern="[0-9]*"
-                onChange={(event) => {
-                  setQuantity(event.target.value);
-                }}
-              />
-              <button type="submit" disabled={disabled}>
-                Confirm
-              </button>
+              <div className="quatitydesign">
+                <input
+                  className="quantityinputdesign"
+                  required="required"
+                  placeholder="Enter quantity"
+                  value={quantity}
+                  type="text"
+                  pattern="[0-9]*"
+                  onChange={(event) => {
+                    setQuantity(event.target.value);
+                  }}
+                />
+                <button
+                  className="quantitybutton"
+                  type="submit"
+                  disabled={disabled}
+                >
+                  Confirm
+                </button>
+              </div>
             </form>
           </section>
           <div className="test3">

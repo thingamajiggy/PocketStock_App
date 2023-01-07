@@ -1,4 +1,94 @@
 .orders {
+  padding: 1rem;
+}
+
+.styled-table {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.styled-table thead tr {
+  background-color: rgb(147, 147, 147);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 12px 12px 0 0;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 15px 10px;
+  border: 1px solid black;
+}
+
+
+.styled-table tbody tr {
+  border-bottom: 1px solid lightgray;
+  font-size: 1rem;
+  transition: background-color 0.5s;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid rgb(83, 102, 130);
+}
+.styled-table tbody tr:hover {
+  background-color: rgb(207, 207, 207);
+}
+
+.styled-table td:first-of-type {
+  width: 25%;
+}
+
+.product-add {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.quatitydesign {
+  display: flex;
+  width: 100%;
+}
+
+.quantityinputdesign {
+  flex: 1 0 auto;
+}
+
+.quantitybutton {
+  margin-left: 1rem;
+}
+
+@media (min-width: 800px) {
+  .product-add {
+  width: 60%;
+  display: flex;
+  flex: 1;
+}
+
+.test2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.styled-table {
+  width: 60%;
+}
+
+.test3 {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+.orders {
+  margin-top: 50px;
+}
+  }
+  
+
+/* .orders {
   top: 150px;
   display: flex;
   position: relative;
@@ -96,7 +186,7 @@ select {
 
 input[type="text"] {
   /* flex: 1 0 auto; */
-  transition: width 0.4s ease-in-out;
+  /* transition: width 0.4s ease-in-out;
   padding: 10px 20px;
   border-radius: 4px;
   margin-right: 7px;
@@ -152,4 +242,4 @@ td {
   color: white;
   font-size: 1rem;
   transition: transform 0.2s;
-}
+} */ 

@@ -4,23 +4,20 @@ import Phone from "../Assets/psphone.png";
 
 const OnApp = () => {
   return (
-    <div className="onapp">
-      <div className="mobile">
-        <p id="mobiledescription">
-          Pocket Stock works better with the app.
-          <br />{" "}
-          <span id="download">
-            <em>Download now on the App store.</em>
-          </span>{" "}
-          <br />{" "}
+    <section className="onapp">
+      <section className="mobile">
+        <section className="mobiledescription">
+          <h3>Pocket Stock works better with the app.</h3>
+          <p id="download">Download now on the App store.</p>
           <button id="downloadbutton">
-            <em>Download</em>
+            <p className="downloadbutton">Download</p>
           </button>
-        </p>
-
-        <img src={Phone} id="phone" />
-      </div>
-    </div>
+        </section>
+        <div className="phone-container">
+          <img alt="" src={Phone} id="phone" />
+        </div>
+      </section>
+    </section>
   );
 };
 

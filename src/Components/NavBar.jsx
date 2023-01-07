@@ -69,7 +69,7 @@ const NavBar = () => {
         <div className="pocketStockLogo">
           <Link to="/">
             {" "}
-            <img src={Logo} className="logo" alt="Pocket Stock Logo"/>{" "}
+            <img src={Logo} className="logo" alt="Pocket Stock Logo" />{" "}
           </Link>
         </div>
         <div className="navListContainer">
@@ -79,7 +79,7 @@ const NavBar = () => {
               {" "}
               <Link to="/MyProducts" key={"3"}>
                 {" "}
-                My Products{" "}
+                Products{" "}
               </Link>{" "}
             </li>
             <li className="navbar-list-items">

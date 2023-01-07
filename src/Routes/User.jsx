@@ -53,7 +53,12 @@ const User = () => {
         <div className="wrapper">
           <h2 className="target">Current User</h2>
         </div>
-        <img src={loggedUser.avatar_url} alt="user_img" width="300" />
+        <img
+          className="maincharacter"
+          src={loggedUser.avatar_url}
+          alt="user_img"
+          width="300"
+        />
         <p>
           <strong>{loggedUser.userName}</strong>
         </p>
